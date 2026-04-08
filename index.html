@@ -3,97 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的影集札記 - 怪奇物語</title>
+    <title>影集最終章 - 怪奇物語 札記</title>
     <style>
-        /* 基本樣式設定 */
+        :root {
+            --netflix-red: #db202c;
+            --deep-black: #050505;
+            --card-bg: #141414;
+            --text-gray: #e0e0e0;
+        }
+
         body {
-            font-family: "Microsoft JhengHei", Arial, sans-serif;
-            background-color: #050505; /* 深色背景 */
-            color: #e0e0e0;
-            line-height: 1.6;
+            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+            background-color: var(--deep-black);
+            color: var(--text-gray);
+            line-height: 1.8;
             margin: 0;
             padding: 0;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* 圖片橫幅 */
-        .banner {
+        /* 頂部動態橫幅 */
+        .hero-banner {
             width: 100%;
+            height: 500px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 60%, var(--deep-black) 100%),
+                        url('your_generated_image.png'); /* 這裡替換成你生成的圖片檔案名稱 */
+            background-size: cover;
+            background-position: center;
             display: flex;
+            align-items: flex-end;
             justify-content: center;
-            padding: 40px 0;
-            background: radial-gradient(circle, #2a0000 0%, #050505 80%);
+            padding-bottom: 20px;
         }
 
-        .banner img {
-            max-width: 80%;
-            height: auto;
-            filter: drop-shadow(0 0 10px #ff0000); /* 加入紅光特效 */
+        .container {
+            max-width: 900px;
+            margin: -50px auto 0; /* 讓內容稍微重疊在 Banner 上 */
+            padding: 20px;
+            position: relative;
+            z-index: 10;
         }
 
-        /* 文章內容 */
         article {
-            background-color: #111;
-            padding: 30px;
-            border-radius: 8px;
-            border-left: 4px solid #db202c; /* Netflix 紅 */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            border-top: 3px solid var(--netflix-red);
+            box-shadow: 0 10px 30px rgba(219, 32, 44, 0.1);
         }
 
         h1 {
-            color: #db202c;
+            color: var(--netflix-red);
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
+        }
+
+        .meta-info {
+            font-size: 0.9em;
+            color: #888;
+            margin-bottom: 20px;
             border-bottom: 1px solid #333;
             padding-bottom: 10px;
         }
 
-        p {
-            font-size: 1.1em;
-            margin-bottom: 20px;
+        /* 重點強調區塊 */
+        .highlight-box {
+            background: rgba(219, 32, 44, 0.05);
+            border-left: 4px solid var(--netflix-red);
+            padding: 20px;
+            margin: 25px 0;
+            font-style: italic;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--netflix-red);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.5em;
+            line-height: 1;
+        }
+
+        .status-tag {
+            background-color: var(--netflix-red);
+            color: white;
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-left: 10px;
         }
 
         footer {
             text-align: center;
-            margin-top: 50px;
-            font-size: 0.8em;
-            color: #666;
+            padding: 60px 0;
+            color: #555;
+            font-size: 0.85em;
+        }
+
+        /* 響應式優化 */
+        @media (max-width: 600px) {
+            .hero-banner { height: 300px; }
+            h1 { font-size: 1.8em; }
         }
     </style>
 </head>
 <body>
 
-    <header class="banner">
-        <img src="Stranger_Things_logo.png" alt="Stranger Things Logo">
-    </header>
+    <header class="hero-banner">
+        </header>
 
     <div class="container">
         <article>
-            <h1>影集介紹：怪奇物語 (Stranger Things)</h1>
+            <div class="meta-info">發表於 2026年4月8日 • 分類：影集隨筆</div>
+            
+            <h1>再見了，霍金斯鎮：怪奇物語的終極回顧</h1>
             
             <p>
-                《怪奇物語》是一部由杜夫兄弟創作的美國科幻恐怖影集 。
+                《怪奇物語》（Stranger Things）不僅僅是一部向 80 年代致敬的科幻影集，它定義了一個世代的流行文化。隨著 2025 年末最後一集的播出，這場長達十年的冒險終於落下了帷幕。
             </p>
 
-            <p>
-                這部影集自首播以來便引起廣大回響：
-                <ul>
-                    <li><strong>第一季：</strong> 於 2016 年 7 月 15 日在 Netflix 首播 。</li>
-                    <li><strong>第二、三季：</strong> 分別於 2017 年 10 月和 2019 年 7 月首播 。</li>
-                    <li><strong>第四季：</strong> 分為兩個部分，分別於 2022 年 5 月和 7 月首播 。</li>
-                </ul>
-            </p>
+            <div class="highlight-box">
+                「一個朋友，是會為你做任何事的人。」—— 這部劇教會我們的，始終關於勇氣與友誼。
+            </div>
+
+            <h3>全劇時程回顧</h3>
+            <ul>
+                <li><strong>啟程 (2016)：</strong> 威爾的失蹤揭開了顛倒世界的序幕。</li>
+                <li><strong>成長 (2017 - 2019)：</strong> 從奪心魔到星城購物中心的大戰，孩子們逐漸長大。</li>
+                <li><strong>高潮 (2022)：</strong> 威可那（Vecna）的出現將恐怖氛圍推向極致。</li>
+                <li><strong>傳奇終章 (2025)：</strong> <span class="status-tag">已完結</span> 第五季分為三部曲，並於 2025 年 12 月 31 日迎來全球淚崩的最終大結局。</li>
+            </ul>
 
             <p>
-                目前影集已進入最終篇章。第五季兼最終季分為三個部分，前二部分於 2025 年 11 月和 12 月播出，而令全球粉絲期待的完結篇則於 12 月 31 日正式播出 。
+                回頭看這幾年的追劇時光，我們跟著 11 號、麥克、達斯汀和路卡斯一同經歷了無數次死裡逃生。雖然霍金斯鎮的故事告一段落，但那份屬於 80 年代的電子合成器音樂，將永遠在粉絲心中迴盪。
             </p>
         </article>
 
         <footer>
-            <p>&copy; 2026 個人影記網誌. 資料來源：文字檔內容</p>
+            <p>&copy; 2026 個人影記網誌. 本網誌封面圖像由 Generative AI 技術生成</p>
         </footer>
     </div>
 
